@@ -5,26 +5,27 @@ sidebar: false
 
 # Education
 
--   B.S., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
+-   B.S., Industrial Engineering, Hacettepe University, Turkey, 2021 - ongoing.
+-   High School, İzmir Özel Türk Fen Lisesi, Turkey, 2017-2021
 
 # Work Experience
 
-## Employements
-
-1.  Firm xxx, position xx, year xxx
-
-2.  Firm yyy, position yyy, year yyy
-
 ## Internships
 
-1.  Firm aaa, position xx, year xxx
-
-2.  Firm bbb, position yyy, year yyy
+1.  Hugo Boss Tekstil Sanayi Ltd. Şti. , Production Intern, 2024
 
 # Projects
 
+Hacettepe University, Graduation Project
+
 # Competencies
 
-R, Quarto, Git, Python
+R, Git, Microsoft Excel, Microsoft Powerpoint
 
 # Hobbies
+
+Watching sports events
+
+Reading articles or books about sports
+
+Listening podcasts

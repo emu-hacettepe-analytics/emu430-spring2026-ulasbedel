@@ -4,12 +4,87 @@ title: "Assignment 1"
 
 # Assignment 1
 
+\## Video Summary\
+\
+In this video, Kerem Demirtaş talks about his career journey and explains what data science is and what it is not. He describes data science as a multidisciplinary field that involves analytical thinking, statistics, and problem-solving skills. \
+\
+He also explains the data science workflow through different real-life problems and gives examples from his own thesis project. The video highlights how data science is applied in practice and what kind of skills are required to succeed in this field.
+
+\### Open-Ended Question\
+\
+\*\*Question:\*\* Why is data science considered an interdisciplinary field?\
+\
+\*\*Answer:\*\* Because it combines different fields such as statistics, computer science, and domain knowledge to extract insights from data and support decision-making.\
+\
+\### Multiple-Choice Question\
+\
+\*\*Question:\*\* Which of the following is the correct order in a typical data science workflow?\
+\
+A) Model Building → Data Collection → Evaluation \
+B) Problem Definition → Data Collection → Exploratory Data Analysis → Model Building → Evaluation \
+C) Data Collection → Evaluation → Model Building \
+D) Evaluation → Problem Definition → Data Collection \
+\
+\*\*Correct Answer:\*\* B
+
+## Data Analysis
+
 ```{r}
-1 + 1
+library(dslabs)
+library(dplyr)
+
+data("polls_us_election_2016")
+
+my_first <- "Ulas"
+my_birth_year <- 2003
+
+k <- (nchar(my_first) + my_birth_year) %% 15 + 8
+k
 ```
 
-My first assignment has two parts.
+### Original Data
 
-## (a)
+```{r}
+if (k %% 2 == 0) {
+  head(polls_us_election_2016, k)
+} else {
+  tail(polls_us_election_2016, k)
+}
+```
 
-## (b)
+### Missing Values
+
+```{r}
+sum(is.na(polls_us_election_2016))
+
+sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)[1:8]
+```
+
+### Replace NA Values
+
+```{r}
+new_data <- polls_us_election_2016
+
+for (i in seq_along(new_data)) {
+  if (is.numeric(new_data[[i]])) {
+    new_data[[i]][is.na(new_data[[i]])] <- my_birth_year + k
+  } else {
+    new_data[[i]] <- as.character(new_data[[i]])
+    new_data[[i]][is.na(new_data[[i]])] <- paste0(my_first, "_", k)
+  }
+}
+```
+
+### New Data
+
+```{r}
+if (k %% 2 == 0) {
+  head(new_data, k)
+} else {
+  tail(new_data, k)
+}
+
+sum(is.na(new_data))
+
+anyNA(new_data)
+```
